@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Happiness Report</title>
+
+    <!--bootstrap for styling-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<style> /* set the CSS for tooltip*/
+    .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+    }
+    
+    .legend {
+    font-size: 12px;
+    }
+    rect {
+        stroke-width: 2;
+    }
+
+    div.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 120px;
+    height: 70px;
+    padding: 0px;
+    font: 12px sans-serif;
+    background: azure;
+    border: 0px;
+    border-radius: 2px;
+    pointer-events: none;
+    }
+</style>
+
+<!--visualization 1-->
+
+
+<body>    
+    <div class="container"> <!-- content -->
+        <h1>World Happiness Report</h1>
+        <p class="lead">By Wei & Nan</p>
+       
+        <!-- more html content can go here; e.g., any data explanation -->
+
+        <h3>Visualization 1: Happiness Rank</h3>
+        <p id="description1">This is a bar chart that shows the top 12 countries with the highest Happiness Score in each region all over the world.</p>
+        <p id="description1">Countries are sorted by their overall happiness score in 2016, and darker color indicates higher score.</p>
+        <p id="description1">Click on the buttons below to look into the "most happy" countries in each region!</p>
+        <div class='btn-group'>
+            <button id="region1" class="btn btn-primary">Western Europe</button>
+            <button id="region2" class="btn btn-primary">Central & Eastern Europe</button>
+            <button id="region3" class="btn btn-primary">Latin America & Caribbean</button>
+        </div>
+
+
+        <!-- more html content can go here, e.g., further details -->
+       
+        <p id="space"> </p>
+        <div class='btn-group'>
+            <button id="region4" class="btn btn-primary">Middle East & North Africa</button>
+            <button id="region5" class="btn btn-primary">Sub - Saharan Africa</button>
+            <button id="region6" class="btn btn-primary">South  & Eastern Asia</button>
+        </div>
+
+        <p id="space"> </p>
+
+        <!-- more html content can go here; e.g., any data explanation -->
+        <div id="visContainer1"> <!-- A container to hold the visualization -->
+        </div>
+        
+    </div>
+</body>
+
+<!--visualization 2-->
+<body> 
+    <div class="container">
+        <h3>Visualization 2: Freedom vs. Life Expectancy</h3>
+        <p id="description2">This is a scatter plot that shows the relationship bewteen countries' Freedom Score and Life Expectancy.</p>
+        <p id="description2">Each circle represents a country, with colors indicating their resgions, and size indicating their happiness scores.</p>
+        <p id="description2">Choose a region of your interest from the drop-down menu, and detailed information will show with the mouse on each country!</p>
+        
+        <select id='filter' name="region-list">
+            <option value="All Regions">All Regions</option>
+            <option value="Australia and New Zealand">Australia and New Zealand</option>
+            <option value="Central and Eastern Europe">Central and Eastern Europe</option> 
+            <option value="Eastern Asia">Eastern Asia</option>
+            <option value="Latin America and Caribbean">Latin America and Caribbean</option>
+            <option value="Middle East and Northern Africa">Middle East and Northern Africa</option> 
+            <option value="North America">North America</option>    
+            <option value="Southeastern Asia">Southeastern Asia</option>
+            <option value="Southern Asia">Southern Asia</option>
+            <option value="Sub-Saharan Africa">Sub-Saharan Africa</option> 
+            <option value="Western Europe">Western Europe</option>    
+        </select>
+
+        <div id="visContainer2"> 
+        </div>
+   
+        <div id="legend">
+        <svg width="600" height="120">
+                <text x="10" y="10">Legend</text>
+                <rect x="10" y="16"  height="12" width="12" fill="blue" style="opacity:0.5;"/>
+                <text x="25" y="26">Australia and New Zealand</text>
+                <rect x="220" y="16"  height="12" width="12" fill="gold" style="opacity:0.5;"/>
+                <text x="235" y="26">Central and Eastern Europe</text>
+                <rect x="450" y="16"  height="12" width="12" fill="MediumSeaGreen" style="opacity:0.5;"/>
+                <text x="465" y="26">Eastern Asia</text>
+                <rect x="10" y="35"  height="12" width="12" fill="lightpink" style="opacity:0.5;"/>
+                <text x="25" y="45">Latin America and Caribbean</text>
+                <rect x="220" y="35"  height="12" width="12" fill="green" style="opacity:0.5;"/>
+                <text x="235" y="45">Middle East and Northern Africa</text>
+                <rect x="450" y="35"  height="12" width="12" fill="orchid" style="opacity:0.5;"/>
+                <text x="465" y="45">North America</text>
+                <rect x="10" y="54"  height="12" width="12" fill="goldenrod" style="opacity:0.5;"/>
+                <text x="25" y="64">Southeastern Asia</text>
+                <rect x="220" y="54"  height="12" width="12" fill="tomato" style="opacity:0.5;"/>
+                <text x="235" y="64">Sub-Saharan Africa</text>
+                <rect x="450" y="54"  height="12" width="12" fill="steelblue" style="opacity:0.5;"/>
+                <text x="465" y="64">Southern Asia</text>
+                <rect x="10" y="73"  height="12" width="12" fill="DeepSkyBlue" style="opacity:0.5;"/>
+                <text x="25" y="83">Western Europe</text>
+                <circle cx="226" cy="78"  r="7" fill="grey" />
+                <text x="235" y="83">Size = Happiness Score</text>
+            </svg>
+        </div>
+        <p id="citation"><i>Data from the World Happiness Report 2016, which ranks 156 countries by their happiness levels, was released in Rome on March 20th, 2016.</i></p>
+    </div>
+
+
+    <!-- JavaScript modules -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="visualization.js"></script>
+</body>
+</html>
